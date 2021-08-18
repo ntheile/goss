@@ -1,0 +1,4 @@
+*.macaroon
+imp.db
+*.cert
+node_modules

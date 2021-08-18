@@ -1,0 +1,19 @@
+{
+  "name": "impervious",
+  "version": "1.0.0",
+  "description": "Instruction on gettint Testnet bitcoin ========================== https://lightning.community/lnd/faucet/2017/01/19/lightning-network-faucet/",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
