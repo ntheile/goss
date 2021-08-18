@@ -168,9 +168,15 @@ function createClusterMembership() {
   /* It precalculates the view that every node has and the paths from the origen node to destination*/
   for (var j = 0; j < num_nodes; j++) {
     destinations = getUniqueRandom(nodes, num_nodes / 2, nodes[j]);
-    nodes[j].name = peers[j].name;
-    nodes[j].pubKey = peers[j].pubKey;
-    nodes[j].gwPort = peers[j].gwPort;
+    nodes[j].name = "node" + j.toString();
+    nodes[j].pubKey = j.toString();
+    nodes[j].gwPort = j;
+    try{
+      nodes[j].name = peers[j].name;
+      nodes[j].pubKey = peers[j].pubKey;
+      nodes[j].gwPort = peers[j].gwPort;
+    }catch(e){ }
+   
     nodes[j].membership = [];
     nodes[j].paths = [];
     for (index in destinations) {
@@ -356,9 +362,16 @@ function locateNodes() {
       fillColor: color,
       originalColor: color,
     });
+    var nm = i;
+    try{
+      if (peers[i].name !== undefined){
+        nm = peers[i].name 
+      }
+    } catch(e){}
+    
     var text = new PointText({
       point: [newX, newY + 30],
-      content: peers[i].name,
+      content: nm,
       fillColor: 'black',
       fontFamily: 'Courier New',
       fontWeight: 'bold',
@@ -479,6 +492,11 @@ function sendingMsg(node) {
 }
 
 window.impSend = function (msg, pubkey, amount, port) {
+
+  // to mock large node test
+  if (num_nodes > 5){
+    return;
+  }
 
   try {
     // alice: 8882 and 02de4a3d885a77960a89d0f31b307f0eec47a25e18126dcddf67ef4212d1f5d788
