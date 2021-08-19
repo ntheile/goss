@@ -1,12 +1,21 @@
 Goss
 =====
-p2p gossip chat room (for market signals). Built on the the Bitcoin stack: bitcoin => lightning => impervious.ai
+Goss  - p2p gossip chat room built on impervious and the Bitcoin Stack
+- secure and anonymous chat 
+- Bets/DLCs , DeFi/Derivatives
 
 <img src="./public/images/mask.png" alt="drawing" width="200"/>
 <br/>
+
+Impervious.ai Hack for freedom app.
+
+[demo](https://www.youtube.com/watch?v=nC63Y-J_sDM)
+
 <img src="./public/images/goss-chat.png" alt="drawing" width="400"/>
 <img src="./public/images/goss-net.png" alt="drawing" width="400"/>
 
+
+Code: https://github.com/ntheile/goss
 
 Quick Start
 ==========
