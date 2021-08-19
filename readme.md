@@ -2,7 +2,7 @@ Goss
 =====
 Goss  - p2p gossip chat room built on impervious and the Bitcoin Stack
 - secure and anonymous chat 
-- Bets/DLCs , DeFi/Derivatives
+- chat about bets/DLCs , DeFi/derivatives
 
 <img src="./public/images/mask.png" alt="drawing" width="200"/>
 <br/>
