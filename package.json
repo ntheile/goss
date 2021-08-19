@@ -5,12 +5,19 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "alice": "./scripts/run-alice.sh",
+    "bob": "./scripts/run-bob.sh",
+    "carol": "./scripts/run-carol.sh",
+    "dave": "./scripts/run-dave.sh",
+    "erin": "./scripts/run-erin.sh",
+    "server": "node server.js",
+    "start": "concurrently --names \"Alice,Bob,Carol,Dave,Erin,Nodejs\" -c \"red,green,yellow,blue,magenta,cyan\" \"npm run alice\" \"npm run bob\" \"npm run carol\" \"npm run dave\" \"npm run erin\" \"npm run server\" "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "concurrently": "^6.2.1",
     "express": "^4.17.1"
   },
   "devDependencies": {

@@ -22,9 +22,25 @@ Quick Start
 
 1. Setup the IMP and lightning network on polar https://github.com/lispmeister/legendary-fiesta.git. You can import the sample config in `IMPNET.polar.zip`
 2. `npm i`
-3. `./start.sh` or you can open the script and run each imp node in a separate terminal window.
+3. `npm run start`
 4. open http://localhost:3000
 
+Scripts
+========
+```bash
+# start imp nodes for each federation member
+./scripts/run-alice.sh
+./scripts/run-bob.sh 
+./scripts/run-carol.sh 
+./scripts/run-dave.sh
+./scripts/run-erin.sh
+
+# run the goss web app
+npm run start
+
+# tail the imp logs
+tail -f ~/.imp/log.txt | grep "message received"
+```
 
 Imp Commands
 ============
