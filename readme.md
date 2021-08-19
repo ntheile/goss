@@ -3,13 +3,17 @@ Goss
 p2p gossip chat room (for market signals). Built on the the Bitcoin stack: bitcoin => lightning => impervious.ai
 
 <img src="./public/images/mask.png" alt="drawing" width="200"/>
+<br/>
+<img src="./public/images/goss-chat.png" alt="drawing" width="400"/>
+<img src="./public/images/goss-net.png" alt="drawing" width="400"/>
+
 
 Quick Start
 ==========
 
 1. Setup the IMP and lightning network on polar https://github.com/lispmeister/legendary-fiesta.git. You can import the sample config in `IMPNET.polar.zip`
 2. `npm i`
-3. `./start.sh`
+3. `./start.sh` or you can open the script and run each imp node in a separate terminal window.
 4. open http://localhost:3000
 
 
