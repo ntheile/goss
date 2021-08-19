@@ -36,7 +36,7 @@ Scripts
 ./scripts/run-erin.sh
 
 # run the goss web app
-npm run start
+node server.js
 
 # tail the imp logs
 tail -f ~/.imp/log.txt | grep "message received"
