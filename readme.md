@@ -42,6 +42,21 @@ node server.js
 tail -f ~/.imp/log.txt | grep "message received"
 ```
 
+Package Umbrel App
+==================
+1. Install Umbrel for development https://github.com/getumbrel/umbrel/tree/master/apps
+2. Boot Umbrel-dev `cd ../umbrel-dev && umbrel-dev boot`
+3. Open the Umbrel dev dashboard at http://umbrel-dev.local 
+4. Docker build the Goss app `npm run build` 
+5. Push to docker hub `npm run docker-push`
+5. Push code to the fork via the instructions here *(in step 3, I used the code below instead) https://github.com/getumbrel/umbrel/tree/master/apps#3-testing-the-app-on-umbrel
+```
+git remote add ntheile https://github.com/ntheile/umbrel.git 
+```
+6. `umbrel-dev reload`
+7. Open http://umbrel-dev.local:3000/ 
+8. `umbrel-dev shutdown`
+
 Imp Commands
 ============
 
@@ -116,3 +131,17 @@ curl --location --request POST '127.0.0.1:9992/v1/federate/request' \
     "pubkey": "02de4a3d885a77960a89d0f31b307f0eec47a25e18126dcddf67ef4212d1f5d788"
 }'
 ```
+
+Todo
+====
+- Create a blacklist of peers gossiping lies
+    - signature check and compare hash of message to majority of peers
+    - if the message hash does not match with 2/3 of peers messages. then that peer is speading lies!
+    - maybe kick liars out of the federation
+    - maybe develop a Reputation Rating Agency
+        - could be hard to keep liars out because they could simply rotate public keys
+    - maybe the 1 sat per message will be enough to keep the majority of users from spreading fake gossip
+- Create a "join-federation.json" spec
+    - how do we allow a peer to join a federation?
+        - maybe do what hyperleder does and have a signed join file?
+        - maybe do what sphinx does and charge a fee to join a tribe?
